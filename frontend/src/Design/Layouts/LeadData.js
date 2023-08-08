@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import TopBar from "./TopBar";
 import customer from "../Assets/customer.png";
 import call from "../Assets/call2.png";
@@ -18,6 +19,30 @@ export default function LeadData() {
     email: "test@abc.com",
     location: "Location 1,Location",
   });
+  React.useEffect(() => {
+    // Make a GET request to http://localhost:3001/lead1
+    axios
+      .get("http://localhost:3001/lead1")
+      .then((response) => {
+        setPersonData(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, []);
+  React.useEffect(() => {
+    // Make a GET request to http://localhost:3001/lead1
+    axios
+      .get("http://localhost:3001/lead1")
+      .then((response) => {
+        setPersonData(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, []);
   const nextTask = {
     medum: "zoom",
     title: "Demo meeting with Client Name",
