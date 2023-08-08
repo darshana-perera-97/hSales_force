@@ -73,7 +73,7 @@ if (dayOfWeek === 0) {
   t = "Invalid day";
 }
 
-app.post("/setName", async (req, res) => {
+app.post("/call", async (req, res) => {
   const filePath = path.join(
     __dirname,
     "./audios/",
@@ -218,7 +218,7 @@ app.post("/web2", async (req, res) => {
     res.status(500).json({ message: "Error making OpenAI API call" });
   }
 });
-app.post("/lead1", async (req, res) => {
+app.get("/lead1", async (req, res) => {
   res.json(leads[0]);
 });
 
